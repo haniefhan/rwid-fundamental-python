@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body%}
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Code</th>
+        <th scope="col">Name</th>
+        <th scope="col">Date</th>
+        <th scope="col">Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for rate in rates %}
+    <tr>
+        <th scope="row">{{ loop.index }}</th>
+        <td>{{ rate.code }}</td>
+        <td>{{ rate.name }}</td>
+        <td>{{ rate.date }}</td>
+        <td>{{ rate.inverseRate }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
